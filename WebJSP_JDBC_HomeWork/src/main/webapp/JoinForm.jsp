@@ -22,7 +22,7 @@ td {
 	border: solid 1px red;
 }
 </style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <script type="text/javascript">
  //jquery 로 간단하게 유효성 check 하기
@@ -37,9 +37,9 @@ td {
     alert('PWD를 입력해 주세요.');
     $('#pwd').focus();
     return false;
-   }else if ($('#mname').val() == "") { // 이름 검사
-    alert('mname를 입력해 주세요.');
-    $('#mname').focus();
+   }else if ($('#name').val() == "") { // 이름 검사
+    alert('name를 입력해 주세요.');
+    $('#name').focus();
     return false;
    }else if ($('#age').val() == "") { // 나이 검사
     alert('age를 입력해 주세요.');
@@ -81,7 +81,7 @@ CREATE TABLE koreaMember
 				<jsp:include page="/common/Left.jsp"></jsp:include>
 			</td>
 			<td style="width: 700px">
-				<form action="Ex02_JDBC_JoinOK.jsp" method="post" name="joinForm" id="joinForm">
+				<form action="KoreaMemberJoin.do" method="post" name="joinForm" id="joinForm">
 					<h3 style="text-align: center;">회원가입</h3>
 					<div>
 						<table
@@ -96,7 +96,7 @@ CREATE TABLE koreaMember
 							</tr>
 							<tr>
 								<th>Name:</th>
-								<td><input type="text" name="mname" id="mname"></td>
+								<td><input type="text" name="name" id="name"></td>
 							</tr>
 							<tr>
 								<th>age:</th>

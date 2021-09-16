@@ -69,7 +69,7 @@
 		// pstmt.executeUpdate(); 실행시  PK 위반 예외 발생    if 타지 않고 ....
 		out.print("<script>");
 			out.print("alert('가입실패');");	
-			out.print("location.href='Ex02_JDBC_JoinForm.jsp'");	
+			out.print("location.href='JoinForm.jsp'");
 		out.print("</script>");
 	}finally{
 		if(pstmt != null){ try{pstmt.close();}catch(Exception e){} }

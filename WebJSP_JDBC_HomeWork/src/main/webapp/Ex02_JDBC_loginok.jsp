@@ -21,7 +21,7 @@
 	2.EX02_JDBC_Login.jsp
 	
 	3.ID 존재(x) > 다시 한번 로그인 처리 (회원가입 페이지)
-	3.Ex02_JDBC_JoinForm.jsp 
+	3.JoinForm.jsp
 	
 	
 	 사용자가 입력한 ID , PWD 알고있고
@@ -34,7 +34,7 @@
 			 }while(rs.next());
 	 
 	}else {
-			 //회원이 아닌 경우 (Ex02_JDBC_JoinForm.jsp )
+			 //회원이 아닌 경우 (JoinForm.jsp )
 		  }		
 			
 	
@@ -87,7 +87,7 @@
 		}
 		//while 타지 않는 경우
 		out.print("<script>");
-			out.print("location.href='Ex02_JDBC_JoinForm.jsp'");
+			out.print("location.href='JoinForm.jsp'");
 		out.print("</script>");
 		
 		

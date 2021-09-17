@@ -2,6 +2,7 @@
   <library name="Maven: jakarta.xml.soap:jakarta.xml.soap-api:1.4.2">
     <CLASSES>
       <root url="jar://$MAVEN_REPOSITORY$/jakarta/xml/soap/jakarta.xml.soap-api/1.4.2/jakarta.xml.soap-api-1.4.2.jar!/" />
+      <root url="jar://$USER_HOME$/Documents/ojdbc6.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$MAVEN_REPOSITORY$/jakarta/xml/soap/jakarta.xml.soap-api/1.4.2/jakarta.xml.soap-api-1.4.2-javadoc.jar!/" />

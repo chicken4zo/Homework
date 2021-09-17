@@ -1,6 +1,7 @@
-<%@page import="kr.or.bit.utils.Singleton_Helper"%>
+
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
+<%@ page import="kr.or.bit.utils.ConnectionHelper" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
@@ -21,7 +22,7 @@
 	Connection conn = null;
 	PreparedStatement pstmt = null;
 	try {
-		conn = Singleton_Helper.getConnection("oracle");
+		conn = ConnectionHelper.getConnection("oracle");
 		String sql = "delete from koreamember where id=?";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, id);
@@ -39,7 +40,7 @@
 	} catch (Exception e) {
 		e.printStackTrace();
 	} finally {
-		Singleton_Helper.close(pstmt);
+		ConnectionHelper.close(pstmt);
 	}
 %>
 

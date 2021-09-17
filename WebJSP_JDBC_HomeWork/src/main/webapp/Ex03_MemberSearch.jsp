@@ -1,4 +1,4 @@
-<%@page import="kr.or.bit.utils.Singleton_Helper"%>
+<%@page import="kr.or.bit.utils.ConnectionHelper"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
@@ -54,7 +54,7 @@ td {
 				ResultSet rs = null;
 			    
 				//where ename like '%길동%'
-				conn = Singleton_Helper.getConnection("oracle");
+				conn = ConnectionHelper.getConnection("oracle");
 				String sql="select count(*) from koreamember where name like ?";
 				String sql2 ="select id, name, email from koreamember where name like '%"+name+"%'";
 				
@@ -96,8 +96,8 @@ td {
 				</table>
 				<a href="Ex03_Memberlist.jsp">회원 목록 페이지</a>
 			<%
-				Singleton_Helper.close(rs);
-				Singleton_Helper.close(pstmt);
+				ConnectionHelper.close(rs);
+				ConnectionHelper.close(pstmt);
 			%>		
 			</td>
 		</tr>

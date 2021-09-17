@@ -1,7 +1,8 @@
-<%@page import="kr.or.bit.utils.Singleton_Helper"%>
+
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
+<%@ page import="kr.or.bit.utils.ConnectionHelper" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
@@ -73,7 +74,7 @@ td {
 				  		
 				  		try{
 							  //dao
-				  			conn = Singleton_Helper.getConnection("oracle");
+				  			conn = ConnectionHelper.getConnection("oracle");
 				  			String sql = "select id,pwd,name,age,gender,email from koreamember where id=?";
 				  			pstmt = conn.prepareStatement(sql);
 				  			
@@ -121,8 +122,8 @@ td {
 				  		}catch(Exception e){
 				  			
 				  		}finally{
-				  			Singleton_Helper.close(rs);
-				  			Singleton_Helper.close(pstmt);
+								ConnectionHelper.close(rs);
+								ConnectionHelper.close(pstmt);
 				  		}
 				  
 				  %>

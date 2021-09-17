@@ -2,6 +2,7 @@ package kr.or.bit.controller;
 
 import kr.or.bit.action.Action;
 import kr.or.bit.action.ActionForward;
+import kr.or.bit.service.EditMemberService;
 import kr.or.bit.service.KoreaMemberJoinService;
 
 import javax.servlet.RequestDispatcher;
@@ -32,6 +33,9 @@ public class KoreaMemberController extends HttpServlet {
             action = new KoreaMemberJoinService();
             forward = action.execute(request, response);
             System.out.println("KoreaMemberJoin Start");
+        }else if(url_Command.equals("/EditMember.do")){
+            action = new EditMemberService();
+            forward = action.execute(request,response);
         }
 
         if (forward != null) {

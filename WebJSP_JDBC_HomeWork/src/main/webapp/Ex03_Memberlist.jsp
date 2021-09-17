@@ -1,4 +1,4 @@
-<%@page import="kr.or.bit.utils.Singleton_Helper"%>
+<%@page import="kr.or.bit.utils.ConnectionHelper"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
@@ -60,7 +60,7 @@ td {
 					PreparedStatement pstmt = null;
 					ResultSet rs = null;
 					try{
-						conn = Singleton_Helper.getConnection("oracle");
+						conn = ConnectionHelper.getConnection("oracle");
 						String sql="select id, ip from koreamember";
 						pstmt = conn.prepareStatement(sql);
 						rs = pstmt.executeQuery(); 
@@ -92,8 +92,8 @@ td {
 					}catch(Exception e){
 						
 					}finally{
-						Singleton_Helper.close(rs);
-						Singleton_Helper.close(pstmt);
+						ConnectionHelper.close(rs);
+						ConnectionHelper.close(pstmt);
 					}
 				%>
 			

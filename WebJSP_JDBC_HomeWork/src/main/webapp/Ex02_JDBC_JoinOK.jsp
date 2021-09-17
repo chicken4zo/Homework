@@ -42,7 +42,7 @@
 	// dao
 	
 	try{
-		conn = DriverManager.getConnection("jdbc:oracle:thin:@db001_high?TNS_ADMIN=/Users/heewonseo/Documents/Oracle/Wallet","ADMIN","Wyfmel0613**");
+		conn = DriverManager.getConnection("jdbc:oracle:thin:@ec2-18-191-168-224.us-east-2.compute.amazonaws.com:49161:xe","SH","1004");
 		String sql="insert into koreamember(id,pwd,name,age,gender,email,ip) values(?,?,?,?,?,?,?)";
 		pstmt = conn.prepareStatement(sql);
 		

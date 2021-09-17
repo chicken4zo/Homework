@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="WebJSP_JDBC_HomeWork:war exploded">
-    <output-path>$PROJECT_DIR$/target/WebJSP_JDBC_HomeWork-1.0-SNAPSHOT</output-path>
+    <output-path>$PROJECT_DIR$/src/main/webapp</output-path>
     <properties id="maven-jee-properties">
       <options>
         <exploded>true</exploded>

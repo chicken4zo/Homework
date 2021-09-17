@@ -1,7 +1,8 @@
-<%@page import="kr.or.bit.utils.Singleton_Helper"%>
+
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
+<%@ page import="kr.or.bit.utils.ConnectionHelper" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
@@ -58,7 +59,7 @@
 		//conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","bituser","1004");
 		//비기능적 요구사항
 		//DAO
-		conn = Singleton_Helper.getConnection("oracle");
+		conn = ConnectionHelper.getConnection("oracle");
 		String sql="select id, pwd from koreamember where id=?";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1,id);
@@ -95,8 +96,8 @@
 	}catch(Exception e){
 		System.out.println(e.getMessage());
 	}finally{
-		Singleton_Helper.close(rs);
-		Singleton_Helper.close(pstmt);
+		ConnectionHelper.close(rs);
+		ConnectionHelper.close(pstmt);
 	} 
 	
 %>    

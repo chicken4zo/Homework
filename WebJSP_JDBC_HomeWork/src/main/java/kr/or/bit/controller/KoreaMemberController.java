@@ -2,6 +2,8 @@ package kr.or.bit.controller;
 
 import kr.or.bit.action.Action;
 import kr.or.bit.action.ActionForward;
+import kr.or.bit.service.KoreaMemberDeleteService;
+import kr.or.bit.service.KoreaMemberDetailService;
 import kr.or.bit.service.KoreaMemberJoinService;
 
 import javax.servlet.RequestDispatcher;
@@ -32,6 +34,17 @@ public class KoreaMemberController extends HttpServlet {
             action = new KoreaMemberJoinService();
             forward = action.execute(request, response);
             System.out.println("KoreaMemberJoin Start");
+        }else if(url_Command.equals("MemberDelete.do")){
+//UI+로직
+            action = new KoreaMemberDeleteService();
+            forward = action.execute(request, response);
+            System.out.println("MemoDeleteService 실행");
+
+        }else if(url_Command.equals("/MemberDetail.do")) { //상세보기
+            //UI+로직
+            action = new KoreaMemberDetailService();
+            forward = action.execute(request, response);
+            System.out.println("MemberDetailService 실행");
         }
 
         if (forward != null) {

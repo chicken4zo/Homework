@@ -15,7 +15,7 @@
 	
 	-판단조건
 	1.ID 존재 , PWD(0) > 회원 > Main page 이동  > session.setAttribute("userid",회원ID);
-	1.Ex02_JDBC_Main.jsp 
+	1.main.jsp
 	
 	2.ID 존재 , PWD(x) > 다시 한번 로그인 처리 (로그인 페이지)
 	2.EX02_JDBC_Login.jsp
@@ -77,7 +77,7 @@
 			  session.setAttribute("userid", rs.getString("id"));
 			  
 			  //이동처리
-			  response.sendRedirect("Ex02_JDBC_Main.jsp");
+			  response.sendRedirect("main.jspMain.do");
 			}else{
 				//ID 존재 , PWD(x)
 				out.print("<script>");
